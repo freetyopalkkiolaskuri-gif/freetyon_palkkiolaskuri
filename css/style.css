@@ -1,0 +1,159 @@
+/* Perustyyli */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headerin logorivi */
+header {
+    padding: 20px 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;   /* keskittää logot */
+    align-items: center;
+    gap: 40px;                  /* väli logojen välissä */
+}
+
+.logo img {
+    max-height: 60px;          /* muuta halutessasi */
+    width: auto;
+    display: block;
+}
+
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Kaksi saraketta */
+.container {
+    max-width: 1400px;    /* tuodaan sisältö lähemmäksi reunoja */
+    margin: 0 auto;
+    padding: 0 10px;     /* pienempi sisäreunaväli */
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.content-left,
+.content-right {
+    flex: 1;
+}
+
+/* Lomake yleinen */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Otsikot (vastaa alkuperäisen laskurin sinisävyä) */
+form h2 {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #005a9c;
+    font-size: 18px;
+}
+
+form h2:first-child {
+    margin-top: 0;
+}
+
+/* Labelit */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* Tekstikentät */
+input[type="number"],
+input[type="text"],
+select {
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 500px;
+    max-width: 100%;   
+    font-size: 14px;
+}
+
+/* Alasvetovalikot saman korkuisiksi */
+select {
+    height: 34px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Väliotsikoiden erotusviiva */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Taas alkuperäisen laskurin rakenteeseen: vasemman puolen ja oikean puolen erottelu */
+.content-left {
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.content-right {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+/* Napit */
+button {
+    margin-top: 15px;
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 1px solid #aaa;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+/* Responsiivisuus */
+@media screen and (max-width: 800px) {
+
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .content-left {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .content-right {
+        padding-left: 0;
+    }
+
+    /* Lomake-elementit koko näytön leveydelle */
+    input[type="number"],
+    input[type="text"],
+    select {
+        width: 100%;
+    }
+
+    /* Logot mobiilikoossa allekkain */
+    .logo-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

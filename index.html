@@ -7,7 +7,251 @@
     <title>Freetyön palkkiolaskuri</title>
 </head>
 <body>
-    
+
+<header>
+    <!-- Logo-alue -->
+    <div class="logo-container">
+        <div class="logo"><img src="" alt="logo1"></div>
+        <div class="logo"><img src="" alt="logo2"></div>
+        <div class="logo"><img src="" alt="logo3"></div> 
+    </div>
+</header>
+
+<main>
+    <h1>Freetyön palkkiolaskuri</h1>
+
+    <div class="container">
+
+        <!-- VASEN PUOLI -->
+        <div class="content-left">
+            <form>
+
+                <!-- KUUKAUSIANSIO -->
+                <h2>Kuukausiansio</h2>
+
+                <label for="verotettava-ansio">Toivottu verotettava kuukausiansio (€)</label>
+                <input type="number" id="verotettava-ansio">
+
+                <hr>
+
+                <!-- KULUT / KK -->
+                <h2>Kulut</h2>
+                <h3>/ kk</h3>
+
+                <label for="tyotila-vuokra">Työtilavuokrat</label>
+                <input type="number" id="tyotila-vuokra">
+
+                <label for="tyotila-muut">Työtilan kulut, esim. sähkö, vesi</label>
+                <input type="number" id="tyotila-muut">
+
+                <label for="puhelin">Puhelinkulut</label>
+                <input type="number" id="puhelin">
+
+                <label for="netti">Verkkoyhteys</label>
+                <input type="number" id="netti">
+
+                <label for="muut-netit">Muut tietoliikennekulut</label>
+                <input type="number" id="muut-netit">
+
+                <label for="toimisto">Toimistotarvikkeet</label>
+                <input type="number" id="toimisto">
+
+                <label for="materiaalit">Tarvike- ja materiaalikulut</label>
+                <input type="number" id="materiaalit">
+
+                <label for="auto">Auto (huolto, vakuutus, vero, polttoaine ym.)</label>
+                <input type="number" id="auto">
+
+                <label for="ammattimaksut">Ammattiliiton, -järjestön tai -kassan jäsenmaksu</label>
+                <input type="number" id="ammattimaksut">
+
+                <label for="lehdet">Ammattikirjallisuus ja mediat</label>
+                <input type="number" id="lehdet">
+
+                <label for="tyomatka">Matkat työpaikan ja asunnon välillä</label>
+                <input type="number" id="tyomatka">
+
+                <label for="varsinaiset-matkat">Varsinaiset työmatkat</label>
+                <input type="number" id="varsinaiset-matkat">
+
+                <label for="rahoitus">Pankki-, rahoitus- ja lainakulut</label>
+                <input type="number" id="rahoitus">
+
+                <label for="muut-kulut">Muut juoksevat kulut</label>
+                <input type="number" id="muut-kulut">
+
+                <hr>
+
+                <!-- KULUT / VUOSI -->
+                <h2>Kulut</h2>
+                <h3>/ vuosi</h3>
+
+                <h3>Kalusto ja työvälineet</h3>
+
+                <label for="tietokoneet">Tietokoneet, tulostimet yms.</label>
+                <input type="number" id="tietokoneet">
+
+                <label for="kamera">Kamerakalusto</label>
+                <input type="number" id="kamera">
+
+                <label for="valaisin">Valaisinkalusto</label>
+                <input type="number" id="valaisin">
+
+                <label for="ohjelmistot">Ohjelmistot ja lisenssit</label>
+                <input type="number" id="ohjelmistot">
+
+                <label for="vakuutukset-laitteet">Vakuutukset laitteille ja toiminnalle</label>
+                <input type="number" id="vakuutukset-laitteet">
+
+                <label for="muut-vakuutukset">Muut vakuutukset (tapaturma ym.)</label>
+                <input type="number" id="muut-vakuutukset">
+
+                <hr>
+
+                <!-- OSTOPALVELUT / VUOSI -->
+                <h2>Ostopalvelut</h2>
+                <h3>/ vuosi</h3>
+
+                <label for="kirjanpito">Kirjanpito</label>
+                <input type="number" id="kirjanpito">
+
+                <label for="tyoterveys">Työterveyshuolto</label>
+                <input type="number" id="tyoterveys">
+
+                <label for="koulutus">Ammatillinen kouluttautuminen</label>
+                <input type="number" id="koulutus">
+
+                <label for="markkinointi">Markkinointikulut</label>
+                <input type="number" id="markkinointi">
+
+                <label for="kotisivut">Verkkosivujen kulut</label>
+                <input type="number" id="kotisivut">
+
+                <label for="muut-ostopalvelut">Muut ostopalvelut</label>
+                <input type="number" id="muut-ostopalvelut">
+
+                <hr>
+
+                <!-- TYÖMÄÄRÄ -->
+                <h2>Työmäärä</h2>
+
+                <label for="laskutettavat-tunnit">Laskutettavien työtuntien määrä</label>
+                <select id="laskutettavat-tunnit">
+                    <option>1 h / pv</option>
+                    <option>2 h / pv</option>
+                    <option>3 h / pv</option>
+                    <option>4 h / pv</option>
+                    <option>5 h / pv</option>
+                    <option>6 h / pv</option>
+                    <option selected>7 h / pv</option>
+                    <option>8 h / pv</option>
+                    <option>9 h / pv</option>
+                    <option>10 h / pv</option>
+                    <option>11 h / pv</option>
+                    <option>12 h / pv</option>
+                    <option>13 h / pv</option>
+                    <option>14 h / pv</option>
+                </select>
+
+                <label for="lomat">Lomat</label>
+                <select id="lomat">
+                    <option>0 vk / vuosi</option>
+                    <option>1 vk / vuosi</option>
+                    <option>2 vk / vuosi</option>
+                    <option>3 vk / vuosi</option>
+                    <option selected>4 vk / vuosi</option>
+                    <option>5 vk / vuosi</option>
+                    <option>6 vk / vuosi</option>
+                    <option>7 vk / vuosi</option>
+                    <option>8 vk / vuosi</option>
+                    <option>9 vk / vuosi</option>
+                    <option>10 vk / vuosi</option>
+                    <option>11 vk / vuosi</option>
+                    <option>12 vk / vuosi</option>
+                </select>
+
+                <label for="sairauspaivat-vuosi">Arvio sairaslomapäivien määrästä</label>
+                <select id="sairauspaivat-vuosi">
+                    <option>0 pv / vuosi</option>
+                    <option>1 pv / vuosi</option>
+                    <option>2 pv / vuosi</option>
+                    <option>3 pv / vuosi</option>
+                    <option>4 pv / vuosi</option>
+                    <option>5 pv / vuosi</option>
+                    <option>6 pv / vuosi</option>
+                    <option>7 pv / vuosi</option>
+                    <option>8 pv / vuosi</option>
+                    <option>9 pv / vuosi</option>
+                    <option>10 pv / vuosi</option>
+                    <option>11 pv / vuosi</option>
+                    <option selected>12 pv / vuosi</option>
+                    <option>13 pv / vuosi</option>
+                    <option>14 pv / vuosi</option>
+                    <option>15 pv / vuosi</option>
+                    <option>16 pv / vuosi</option>
+                    <option>17 pv / vuosi</option>
+                    <option>18 pv / vuosi</option>
+                    <option>19 pv / vuosi</option>
+                    <option>20 pv / vuosi</option>
+                    <option>21 pv / vuosi</option>
+                    <option>22 pv / vuosi</option>
+                    <option>23 pv / vuosi</option>
+                    <option>24 pv / vuosi</option>
+                    <option>25 pv / vuosi</option>
+                    <option>26 pv / vuosi</option>
+                    <option>27 pv / vuosi</option>
+                    <option>28 pv / vuosi</option>
+                    <option>29 pv / vuosi</option>
+                    <option>30 pv / vuosi</option>
+                </select>
+
+                <hr>
+
+                <button type="submit">LASKE TAVOITELASKUTUS</button>
+
+            </form>
+
+            <p>Tavanomaisesta poikkeavat kulut lisätään laskuun palkkion päälle, ja niistä sovitaan etukäteen toimeksiantajan kanssa. 
+                Tällaisia ovat esimerkiksi matka- ja majoituskulut sekä juttua tai kuvausta varten hankitut tarvikkeet.</p>
+        </div>
+
+        <!-- OIKEA PUOLI: Selite -->
+        <div class="content-right">
+            <div class="">
+                <h2>MITEN LASKURI LASKEE?</h2>
+
+                <p>Ensin lasketaan normaalit työpäivät vuodessa = 7,5 tuntia x 5 päivää x 52 viikkoa = 1 950 bruttotyötuntia vuodessa. 
+                    Tästä vähennetään arkipyhät keskimääräisesti, 8 päivää x 7,5 tuntia = 60 tuntia.</p><br>
+
+                <p>Laskurin vuosityöaika on siis 1 890 työtuntia, josta vähennetään lomat ja arvio sairauslomapäivistä.
+            </div><br>
+
+            <div class="">
+                <h2>Lakisääteinen yrittäjäeläke YEL</h2>
+
+                <p>Yrittäjäasemassa oleva henkilö järjestää eläketurvan itselleen yrittäjien eläkelain YEL:n mukaan. YEL-vakuutus on pakollinen, eikä vakuuttamisvelvollisuus riipu yritystoiminnan muodosta. 
+                    Myös verokortilla työskentelevä ja laskutuspalveluita käyttävä on YEL-velvollinen, ellei hän ole työsuhteessa työnsä teettäjään. Palkkiopohjaisesti työtään myyvät luovan työn tekijät joutuvat 
+                    siis ehtojen täyttyessä <a href="https://www.etk.fi/suomen-elakejarjestelma/elaketurva/tyoelaketurvan-kattavuus-ja-vakuuttaminen/yel-yrittajat">Eläketurvakeskus</a>
+                    ottamaan YEL-vakuutuksen, vaikka eivät yritystä perustaisikaan.</p><br>
+
+                <p>YEL-vakuutuksen työtulon perusteella määritellään myös itsensä työllistäjän sairauspäiväraha, vanhempainetuudet ja työttömyysturva. YEL-vakuutus on täysimääräisesti verovähennyskelpoinen. 
+                    YEL-vakuutus on otettava kuuden kuukauden kuluessa yrittäjätoiminnan alkamisesta. Vakuutus on henkilökohtainen ja se otetaan eläkevakuutusyhtiöstä. Sama vakuutus koskee kaikkea yritystoimintaa.</p><br>
+
+                <p>YEL-työtulosuosituslaskuri 
+                    <a href="https://laskurit.tyoelake.fi/fi/yel-tyotulo-suositus-laskuri">Laske YEL-työtulosuositus</a>
+                </p><br>
+
+                <a href="https://www.etk.fi/suomen-elakejarjestelma/elaketurva/tyoelaketurvan-kattavuus-ja-vakuuttaminen/yel-yrittajat/">
+                    Lue lisää YEL-vakuutukesta
+                </a>
+            </div>
+        </div>
+
+</main>
+
+<footer></footer>
+
 <script src="js/script.js"></script>
+
 </body>
 </html>
