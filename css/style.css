@@ -24,11 +24,12 @@ header {
     display: block;
 }
 
-
+/* Pääsisältö */
 main {
     padding: 20px;
 }
 
+/* Sivun otsikko */
 h1 {
     margin-bottom: 40px;
     text-align: center;
@@ -44,12 +45,23 @@ h1 {
     align-items: flex-start;
 }
 
+/* Vasemman puolen ja oikean puolen erottelu */
+.content-left {
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.content-right {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
 .content-left,
 .content-right {
     flex: 1;
 }
 
-/* Lomake yleinen */
+/* Lomake*/
 form {
     display: flex;
     flex-direction: column;
@@ -101,17 +113,6 @@ hr {
     margin: 20px 0;
 }
 
-/* Taas alkuperäisen laskurin rakenteeseen: vasemman puolen ja oikean puolen erottelu */
-.content-left {
-    padding-right: 20px;
-    border-right: 1px solid #ddd;
-}
-
-.content-right {
-    padding-left: 20px;
-    line-height: 1.6;
-}
-
 /* Napit */
 button {
     margin-top: 15px;
@@ -127,6 +128,7 @@ button:hover {
     background: #ddd;
 }
 
+/* Tuloslaatikko */
 .tulos-box {
     margin-top: 20px;
     padding: 15px;
@@ -138,7 +140,6 @@ button:hover {
     color: #003f66;                
     display: none;                 
 }
-
 
 /* Footer */
 footer {
