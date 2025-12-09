@@ -128,6 +128,29 @@ button:hover {
     background: #ddd;
 }
 
+/* Tulostusnappi */
+.print-button {
+    background-color: #005a9c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.print-button:hover {
+    background-color: #003d6b;
+}
+
+.print-section {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    display: none;
+}
+
 /* Tuloslaatikko */
 .tulos-box {
     margin-top: 20px;
@@ -141,6 +164,20 @@ button:hover {
     display: none;                 
 }
 
+/* Tulostustyyli */
+@media print {
+    * {
+        background: white;;
+        color: black;
+    }
+    
+    body {
+        margin: 0;
+        padding: 20px;
+        background: white;
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -150,6 +187,8 @@ footer {
     font-size: 14px;
     color: #666;
 }
+
+
 
 /* Responsiivisuus */
 @media screen and (max-width: 800px) {

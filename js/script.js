@@ -144,6 +144,12 @@ function displayResults(data) {
         return;
     }
     
+    // Näytä myös tulostusnappi
+    const printSection = document.getElementById('print-section-container');
+    if (printSection) {
+        printSection.style.display = 'block';
+    }
+    
     const alvPercent = (CONFIG.ALV * 100).toFixed(1);
     
     // Taulukko summaarisen tiedon osioille
@@ -290,3 +296,42 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', calculateBilling);
     }
 });
+
+// Tulosta tulokset PDF:ksi
+function printToPDF() {
+    const resultsContainer = document.getElementById('tavoitelaskutus-tulos');
+    const resultsHTML = resultsContainer.innerHTML;
+    
+    // Avaa uusi ikkuna
+    const printWindow = window.open('', '', 'height=800,width=1000');
+    printWindow.document.write('<html><head><title>Freetyön palkkiolaskuri - Laskelmatulos</title>');
+    printWindow.document.write('<style>');
+    printWindow.document.write('body { font-family: Arial, sans-serif; padding: 20px; background: white; }');
+    printWindow.document.write('h3 { color: #005a9c; }');
+    printWindow.document.write('h4 { color: #003f66; margin-top: 20px; }');
+    printWindow.document.write('.result-section { margin-bottom: 20px; page-break-inside: avoid; }');
+    printWindow.document.write('.result-section.highlight { background: #f0f8ff; padding: 10px; border-left: 4px solid #005a9c; }');
+    printWindow.document.write('ul { margin: 10px 0; padding-left: 20px; }');
+    printWindow.document.write('li { margin: 5px 0; }');
+    printWindow.document.write('.print-section { display: none; }');
+    printWindow.document.write('</style></head><body>');
+    printWindow.document.write(resultsHTML);
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+    
+    setTimeout(function() {
+        printWindow.print();
+        // Sulkee ikkunan tulostuksen jälkeen
+        printWindow.onafterprint = function() {
+            printWindow.close();
+        };
+        // Fallback: sulkee ikkunan hetken kuluttua jos tulostus peruutetaan
+        setTimeout(function() {
+            try {
+                if (printWindow && !printWindow.closed) {
+                    printWindow.close();
+                }
+            } catch(e) {}
+        }, 500);
+    }, 250);
+}
