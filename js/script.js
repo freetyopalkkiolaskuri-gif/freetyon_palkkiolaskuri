@@ -209,7 +209,7 @@ function displayResults(data) {
     let html = '<div class="results">';
     html += '<h3>Laskutustulos</h3>';
     
-    // Summariset osiot
+    // Osiot jotka yhteenvedossa näytetään
     html += summaryItems.map(item => {
         let itemHtml = '<div class="result-section">';
         itemHtml += '<h4>' + item.title + '</h4>';
@@ -231,7 +231,7 @@ function displayResults(data) {
     
     html += '<hr>';
     
-    // Laskutushinnat
+    // Tavoite laskutushinnat
     html += billingRates.map(rate => {
         return '<div class="result-section highlight">' +
                 '<h4>' + rate.title + '</h4>' +
