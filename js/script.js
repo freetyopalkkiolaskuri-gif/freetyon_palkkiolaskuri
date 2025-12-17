@@ -269,12 +269,12 @@ function saveFormData() {
         }
     });
     
-    localStorage.setItem('billingCalculatorData', JSON.stringify(formData));
+    sessionStorage.setItem('billingCalculatorData', JSON.stringify(formData));
 }
 
 // Lataa tallennetut tiedot selaimesta 
 function loadFormData() {
-    const saved = localStorage.getItem('billingCalculatorData');
+    const saved = sessionStorage.getItem('billingCalculatorData');
     if (!saved) return;
     
     const formData = JSON.parse(saved);
