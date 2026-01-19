@@ -76,6 +76,8 @@ form > label {
     justify-self: start;
     margin: 0;
     font-weight: bold;
+    display: inline-block; /* Firefox tarvitsee tämän */
+    align-self: center;     /* Keskittää pystysuunnassa */
 }
 
 form > input[type="number"],
