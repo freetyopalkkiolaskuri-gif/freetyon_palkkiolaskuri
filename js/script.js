@@ -60,6 +60,7 @@ function calculateBilling(event) {
         
         // Vuosittaiset kulut 
         const annualExpenses = 
+            (parseFloat(document.getElementById('kalusto').value) || 0) +
             (parseFloat(document.getElementById('tietokoneet').value) || 0) +
             (parseFloat(document.getElementById('kamera').value) || 0) +
             (parseFloat(document.getElementById('valaisin').value) || 0) +
