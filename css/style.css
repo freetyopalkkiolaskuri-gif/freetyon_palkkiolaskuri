@@ -61,11 +61,49 @@ h1 {
     flex: 1;
 }
 
-/* Lomake*/
+/* Lomake: käytetään gridiä kahdelle sarakkeelle (label | input) ilman HTML-muutoksia */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
+    align-items: center;
+}
+
+/* Oletuksena label vasempaan sarakkeeseen, input/select oikeaan */
+form > label {
+    grid-column: 1;
+    justify-self: start;
+    margin: 0;
+    font-weight: bold;
+}
+
+form > input[type="number"],
+form > input[type="text"],
+form > select {
+    grid-column: 2;
+    width: 100%;
+    margin: 0;
+}
+
+/* Rajaa inputien maksimileveys jotta ne eivät veny liian pitkiksi leveillä näytöillä */
+form > input[type="number"],
+form > input[type="text"],
+form > select {
+    max-width: 320px;
+    justify-self: start; /* vasemmalle tasaus grid-sarakkeessa */
+    box-sizing: border-box;
+}
+
+/* Elementit jotka haluavat kattaa molemmat sarakkeet */
+form > h2,
+form > h3,
+form > hr,
+form > .tulos-box,
+form > .print-section,
+form > button,
+form > p {
+    grid-column: 1 / -1;
 }
 
 /* Otsikot (vastaa alkuperäisen laskurin sinisävyä) */
@@ -80,12 +118,7 @@ form h2:first-child {
     margin-top: 0;
 }
 
-/* Labelit */
-label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 3px;
-}
+/* (label styling now handled in form > label) */
 
 /* Tekstikentät */
 input[type="number"],
@@ -94,8 +127,8 @@ select {
     padding: 7px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 500px;
-    max-width: 100%;   
+    width: auto;
+    max-width: 100%;
     font-size: 14px;
 }
 
@@ -208,10 +241,22 @@ footer {
         padding-left: 0;
     }
 
-    /* Lomake-elementit koko näytön leveydelle */
-    input[type="number"],
-    input[type="text"],
-    select {
+    /* Lomake: single-column grid (label above input) */
+    form {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    form > label {
+        grid-column: 1;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    form > input[type="number"],
+    form > input[type="text"],
+    form > select {
+        grid-column: 1;
         width: 100%;
     }
 

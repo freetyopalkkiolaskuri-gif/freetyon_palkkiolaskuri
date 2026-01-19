@@ -9,17 +9,24 @@
 <body>
 
 <header>
-    <!-- Logo-alue -->
-    <div class="logo-container">
-        <div class="logo"><img src="" alt="logo1"></div>
-        <div class="logo"><img src="" alt="logo2"></div>
-        <div class="logo"><img src="" alt="logo3"></div> 
+
+    <!-- SIVUN OTSIKKO -->
+    <h1>Freetyön palkkiolaskuri</h1>
+
+    <!-- LASKURIN SELITE -->
+     <div class="calc-info">
+        <h3>Mitä laskuri laskee?</h3>
+        <p>Laskutettava työtuntimäärä/vuosi lasketaan päivittäisestä laskutettavasta työtuntimäärästä seuraavasti:</p>
+        <p>Ensin lasketaan normaalit työpäivät vuodessa = 7,5 tuntia x 5 päivää x 52 viikkoa = 1 950 bruttotyötuntia vuodessa..</p>
+        <p>Tästä vähennetään arkipyhät keskimääräisesti, 8 päivää x 7,5 tuntia = 60 tuntia.</p>
+        <p>Laskurin vuosityöaika on siis 1 890 työtuntia, josta vähennetään lomat ja arvio sairauslomapäivistä.</p>
     </div>
+  
 </header>
 
 <!-- PÄÄSISÄLTÖ -->
 <main>
-    <h1>Freetyön palkkiolaskuri</h1>
+    
 
     <!-- KAKSI SARAKETTA -->
     <div class="container">
@@ -34,110 +41,7 @@
                 <label for="verotettava-ansio">Toivottu verotettava kuukausiansio (€)</label>
                 <input type="number" id="verotettava-ansio">
 
-                <hr>
-
-                <!-- KULUT / KK -->
-                <h2>Kulut</h2>
-                <h3>/ kk</h3>
-
-                <label for="tyotila-vuokra">Työtilavuokrat</label>
-                <input type="number" id="tyotila-vuokra">
-
-                <label for="tyotila-muut">Työtilan kulut, esim. sähkö, vesi</label>
-                <input type="number" id="tyotila-muut">
-
-                <label for="puhelin">Puhelinkulut</label>
-                <input type="number" id="puhelin">
-
-                <label for="netti">Verkkoyhteys</label>
-                <input type="number" id="netti">
-
-                <label for="muut-netit">Muut tietoliikennekulut</label>
-                <input type="number" id="muut-netit">
-
-                <label for="toimisto">Toimistotarvikkeet</label>
-                <input type="number" id="toimisto">
-
-                <label for="materiaalit">Tarvike- ja materiaalikulut</label>
-                <input type="number" id="materiaalit">
-
-                <label for="auto">Auto (huolto, vakuutus, vero, polttoaine ym.)</label>
-                <input type="number" id="auto">
-
-                <label for="ammattimaksut">Ammattiliiton, -järjestön tai -kassan jäsenmaksu</label>
-                <input type="number" id="ammattimaksut">
-
-                <label for="lehdet">Ammattikirjallisuus ja mediat</label>
-                <input type="number" id="lehdet">
-
-                <label for="tyomatka">Matkat työpaikan ja asunnon välillä</label>
-                <input type="number" id="tyomatka">
-
-                <label for="varsinaiset-matkat">Varsinaiset työmatkat</label>
-                <input type="number" id="varsinaiset-matkat">
-
-                <label for="rahoitus">Pankki-, rahoitus- ja lainakulut</label>
-                <input type="number" id="rahoitus">
-
-                <label for="muut-kulut">Muut juoksevat kulut</label>
-                <input type="number" id="muut-kulut">
-
-                <hr>
-
-                <!-- KULUT / VUOSI -->
-                <h2>Kulut</h2>
-                <h3>/ vuosi</h3>
-
-                <h3>Kalusto ja työvälineet</h3>
-
-                <label for="tietokoneet">Tietokoneet, tulostimet yms.</label>
-                <input type="number" id="tietokoneet">
-
-                <label for="kamera">Kamerakalusto</label>
-                <input type="number" id="kamera">
-
-                <label for="valaisin">Valaisinkalusto</label>
-                <input type="number" id="valaisin">
-
-                <label for="ohjelmistot">Ohjelmistot ja lisenssit</label>
-                <input type="number" id="ohjelmistot">
-
-                <label for="vakuutukset-laitteet">Vakuutukset laitteille ja toiminnalle</label>
-                <input type="number" id="vakuutukset-laitteet">
-
-                <label for="muut-vakuutukset">Muut vakuutukset (tapaturma ym.)</label>
-                <input type="number" id="muut-vakuutukset">
-
-                <label for="yel">YEL</label>
-                <input type="number" id="yel">
-
-                <hr>
-
-                <!-- OSTOPALVELUT / VUOSI -->
-                <h2>Ostopalvelut</h2>
-                <h3>/ vuosi</h3>
-
-                <label for="kirjanpito">Kirjanpito</label>
-                <input type="number" id="kirjanpito">
-
-                <label for="tyoterveys">Työterveyshuolto</label>
-                <input type="number" id="tyoterveys">
-
-                <label for="koulutus">Ammatillinen kouluttautuminen</label>
-                <input type="number" id="koulutus">
-
-                <label for="markkinointi">Markkinointikulut</label>
-                <input type="number" id="markkinointi">
-
-                <label for="kotisivut">Verkkosivujen kulut</label>
-                <input type="number" id="kotisivut">
-
-                <label for="muut-ostopalvelut">Muut ostopalvelut</label>
-                <input type="number" id="muut-ostopalvelut">
-
-                <hr>
-
-                <!-- TYÖMÄÄRÄ -->
+                 <!-- TYÖMÄÄRÄ -->
                 <h2>Työmäärä</h2>
 
                 <label for="laskutettavat-tunnit">Laskutettavien työtuntien määrä</label>
@@ -210,7 +114,102 @@
                     <option>30 pv / vuosi</option>
                 </select>
 
-                <hr>
+
+                <!-- KULUT / KK -->
+                <h2>Kulut</h2>
+                <h3>/ kk</h3>
+
+                <label for="tyotila-vuokra">Työtilavuokrat</label>
+                <input type="number" id="tyotila-vuokra">
+
+                <label for="tyotila-muut">Työtilan kulut, esim. sähkö, vesi</label>
+                <input type="number" id="tyotila-muut">
+
+                <label for="puhelin">Puhelinkulut</label>
+                <input type="number" id="puhelin">
+
+                <label for="netti">Verkkoyhteys</label>
+                <input type="number" id="netti">
+
+                <label for="muut-netit">Muut tietoliikennekulut</label>
+                <input type="number" id="muut-netit">
+
+                <label for="toimisto">Toimistotarvikkeet</label>
+                <input type="number" id="toimisto">
+
+                <label for="materiaalit">Tarvike- ja materiaalikulut</label>
+                <input type="number" id="materiaalit">
+
+                <label for="auto">Auto (huolto, vakuutus, vero, polttoaine ym.)</label>
+                <input type="number" id="auto">
+
+                <label for="ammattimaksut">Ammattiliiton, -järjestön tai -kassan jäsenmaksu</label>
+                <input type="number" id="ammattimaksut">
+
+                <label for="lehdet">Ammattikirjallisuus ja mediat</label>
+                <input type="number" id="lehdet">
+
+                <label for="tyomatka">Matkat työpaikan ja asunnon välillä</label>
+                <input type="number" id="tyomatka">
+
+                <label for="varsinaiset-matkat">Varsinaiset työmatkat</label>
+                <input type="number" id="varsinaiset-matkat">
+
+                <label for="rahoitus">Pankki-, rahoitus- ja lainakulut</label>
+                <input type="number" id="rahoitus">
+
+                <label for="muut-kulut">Muut juoksevat kulut</label>
+                <input type="number" id="muut-kulut">
+
+                <!-- KULUT / VUOSI -->
+                <h2>Kulut</h2>
+                <h3>/ vuosi</h3>
+
+                <h3>Kalusto ja työvälineet</h3>
+
+                <label for="tietokoneet">Tietokoneet, tulostimet yms.</label>
+                <input type="number" id="tietokoneet">
+
+                <label for="kamera">Kamerakalusto</label>
+                <input type="number" id="kamera">
+
+                <label for="valaisin">Valaisinkalusto</label>
+                <input type="number" id="valaisin">
+
+                <label for="ohjelmistot">Ohjelmistot ja lisenssit</label>
+                <input type="number" id="ohjelmistot">
+
+                <label for="vakuutukset-laitteet">Vakuutukset laitteille ja toiminnalle</label>
+                <input type="number" id="vakuutukset-laitteet">
+
+                <label for="muut-vakuutukset">Muut vakuutukset (tapaturma ym.)</label>
+                <input type="number" id="muut-vakuutukset">
+
+                <label for="yel">YEL</label>
+                <input type="number" id="yel">
+
+                <!-- OSTOPALVELUT / VUOSI -->
+                <h2>Ostopalvelut</h2>
+                <h3>/ vuosi</h3>
+
+                <label for="kirjanpito">Kirjanpito</label>
+                <input type="number" id="kirjanpito">
+
+                <label for="tyoterveys">Työterveyshuolto</label>
+                <input type="number" id="tyoterveys">
+
+                <label for="koulutus">Ammatillinen kouluttautuminen</label>
+                <input type="number" id="koulutus">
+
+                <label for="markkinointi">Markkinointikulut</label>
+                <input type="number" id="markkinointi">
+
+                <label for="kotisivut">Verkkosivujen kulut</label>
+                <input type="number" id="kotisivut">
+
+                <label for="muut-ostopalvelut">Muut ostopalvelut</label>
+                <input type="number" id="muut-ostopalvelut">
+
 
                 <!-- TAVOITELASKUTUS -->
                 <div id="tavoitelaskutus-tulos" class="tulos-box"></div><!-- TULOS NÄKYVIIN TÄHÄN -->
@@ -230,17 +229,10 @@
 
         <!-- OIKEA PUOLI: Selite -->
         <div class="content-right">
-            <div class="calc-info">
-                <h2>MITEN LASKURI LASKEE?</h2>
-
-                <p>Ensin lasketaan normaalit työpäivät vuodessa = 7,5 tuntia x 5 päivää x 52 viikkoa = 1 950 bruttotyötuntia vuodessa. 
-                    Tästä vähennetään arkipyhät keskimääräisesti, 8 päivää x 7,5 tuntia = 60 tuntia.</p>
-
-                <p>Laskurin vuosityöaika on siis 1 890 työtuntia, josta vähennetään lomat ja arvio sairauslomapäivistä.</p>
-            </div><br>
+           
 
             <div class="yel-info">
-                <h2>Lakisääteinen yrittäjäeläke YEL</h2>
+                <h3>Lakisääteinen yrittäjäeläke YEL</h3>
 
                 <p>Yrittäjäasemassa oleva henkilö järjestää eläketurvan itselleen yrittäjien eläkelain YEL:n mukaan. YEL-vakuutus on pakollinen, eikä vakuuttamisvelvollisuus riipu yritystoiminnan muodosta. 
                     Myös verokortilla työskentelevä ja laskutuspalveluita käyttävä on YEL-velvollinen, ellei hän ole työsuhteessa työnsä teettäjään. Palkkiopohjaisesti työtään myyvät luovan työn tekijät joutuvat 
@@ -258,13 +250,20 @@
                     Lue lisää YEL-vakuutukesta
                 </a>
             </div>
+
+            <!-- Logo-alue -->
+            <div class="logo-container">
+                <div class="logo"><img src="" alt="logo1"></div>
+                <div class="logo"><img src="" alt="logo2"></div>
+                <div class="logo"><img src="" alt="logo3"></div> 
+            </div>
         </div>
 
 </main>
 
 <!--FOOTER-->
 <footer>
-    <p>© 2025 Freetyön palkkiolaskuri</p>
+    <img src="" alt="Laaja logokokoelma">
 </footer>
 
 <script src="js/script.js"></script>
