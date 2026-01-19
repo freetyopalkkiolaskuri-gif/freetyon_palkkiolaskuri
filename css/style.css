@@ -1,25 +1,104 @@
+/*
+    Style.css
+
+    Tämä tiedosto sisältää sivun tyylit. Alla on lyhyt selitys kuinka tiedosto
+    on jäsennelty ja mitä eri osiot tarkoittavat. Tarkat CSS-säännöt löytyvät
+    tiedoston alapuolelta; kommentit selittävät miksi sääntö on olemassa ja miten
+    siihen kannattaa tehdä muutoksia.
+
+    Rakenne lyhyesti:
+    - Perustyyli: perusfontti, marginaalit
+    - Header: sivun yläosa, jossa otsikko (vasen) ja laskurin selite (oikea)
+        -- Sisältö on keskitetty .header-inner-kääreeseen, jotta se linjautuu
+             saman leveyden kanssa kuin pääsisällön `.container`.
+    - Logo-alue: sivun alalaidan logot
+    - Pääsisältö (.container): kaksi saraketta (.content-left ja .content-right)
+    - Lomake: grid-asettelu label/input -pareille
+    - Responsiivisuus: alle 800px siirrytään yhden sarakkeen asetteluun
+
+    Muistiinpanot kehittäjälle:
+    - Jos haluat että headerin tausta ulottuu koko näytön leveydelle mutta
+        sisältö linjautuu samalla tavalla kuin sisältöalue, muokkaa `.header-inner`
+        eikä `header`-elementtiä. `.header-inner` hallinnoi leveyttä (max-width)
+        ja vaakasisennystä (padding).
+*/
+
 /* Perustyyli */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
 }
 
-/* Headerin logorivi */
+/*
+    Header (sivun yläosa)
+
+    Selitys:
+    - `header` on taustaväriltään leveä laatikko koko näytön leveydellä.
+    - Sisältö (otsikko ja selite) keskitetään sisäiseen kääreeseen `.header-inner`.
+    - Näin voimme pitää headerin taustan koko leveydellä, mutta linjata
+        tekstin tarkasti saman leveysalueen kanssa kuin muu sisältö (.container).
+*/
 header {
-    padding: 20px 0;
     background: #f5f5f5;
+    padding: 20px 0;
+}
+/*
+    .header-inner - keskitetty kääre
+
+    Tämä elementti määrittää headerin sisällön leveyden ja vaakasisennyksen.
+    - `max-width` pitää sisällön saman levyisenä kuin `.container`.
+    - `margin:0 auto` keskittää kääreen.
+    - Flex-asettelu asettaa otsikon ja selitteen vierekkäin.
+*/
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
+/* Vasemman ja oikean header-lohkon asettelu */
+.header-inner-left {
+    flex: 1 1 50%;
+    text-align: left;
+    padding-right: 20px; 
+}
+
+.header-inner-right {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px; 
+}
+
+.header-inner-right .calc-info {
+    max-width: 520px;
+    display: block;
+    text-align: left; /*Laskee tekstin vasempaan reunaan*/
+}
+
+/* Otsikon tyyli */
+.header-inner-left h1 {
+    text-align: left;
+    margin: 0;
+}
+
+/*Logo alue*/
 .logo-container {
     display: flex;
-    justify-content: center;   /* keskittää logot */
+    justify-content: center;
+    flex-direction: column;   /* keskittää logot */
     align-items: center;
     gap: 40px;                  /* väli logojen välissä */
 }
 
 .logo img {
-    max-height: 60px;          /* muuta halutessasi */
+    max-height: 60px;          /* logo kuvan koko */
     width: auto;
     display: block;
 }
@@ -29,13 +108,14 @@ main {
     padding: 20px;
 }
 
-/* Sivun otsikko */
-h1 {
-    margin-bottom: 40px;
-    text-align: center;
-}
+/*
+    Pään sisältöalue (.container) — kaksi saraketta
 
-/* Kaksi saraketta */
+    - `.container` rajoittaa sisällön leveydeltä (max-width) ja keskittää sen.
+    - Sen sisällä on kaksi saraketta: `content-left` (lomake) ja `content-right`
+        (selitykset ja lisätiedot).
+    - `gap`-arvo määrittää tilan sarakkeiden välissä.
+*/
 .container {
     max-width: 1400px;    /* tuodaan sisältö lähemmäksi reunoja */
     margin: 0 auto;
@@ -48,7 +128,6 @@ h1 {
 /* Vasemman puolen ja oikean puolen erottelu */
 .content-left {
     padding-right: 20px;
-    border-right: 1px solid #ddd;
 }
 
 .content-right {
@@ -77,7 +156,7 @@ form > label {
     margin: 0;
     font-weight: bold;
     display: inline-block; /* Firefox tarvitsee tämän */
-    align-self: center;     /* vertically center label next to inputs */
+    align-self: center;     /* Keskittää labelin pystysuunnassa */
 }
 
 form > input[type="number"],
@@ -155,7 +234,7 @@ form h2:first-child {
     margin-top: 0;
 }
 
-/* (label styling now handled in form > label) */
+/* Labelien tyylit */
 
 /* Tekstikentät */
 input[type="number"],
@@ -174,13 +253,6 @@ select {
     height: 34px;
     background: #fff;
     cursor: pointer;
-}
-
-/* Väliotsikoiden erotusviiva */
-hr {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 20px 0;
 }
 
 /* Napit */
@@ -251,14 +323,9 @@ button:hover {
 /* Footer */
 footer {
     text-align: center;
-    padding: 15px 0;
     background: #f5f5f5;
-    margin-top: 40px;
-    font-size: 14px;
-    color: #666;
+    height: 40px;
 }
-
-
 
 /* Responsiivisuus */
 @media screen and (max-width: 800px) {
@@ -268,6 +335,42 @@ footer {
         max-width: 100%;
         padding: 0 10px;
     }
+
+    /* Mobiiliasetukset headerille */
+    .header-inner {
+        flex-direction: column;    /* pinottaa otsikon ja selitteen päällekkäin */
+        gap: 8px;
+        padding: 8px 10px;        /* pienempi padding mobiilissa */
+        align-items: stretch;     /* täytä leveys, niin linjautuu containerin kanssa */
+    }
+
+    .header-inner-left,
+    .header-inner-right {
+        flex: none;               /* ei venytä sivuttaissuunnassa */
+        width: 100%;
+        padding: 0;               /* poista desktop-paddingit */
+    }
+
+    /* Keskitetään otsikko mobiilissa */
+    .header-inner-left h1 {
+        text-align: center;
+        font-size: 1.4rem;
+        margin: 0.2rem 0;
+    }
+
+    /* Selite (calc-info) kerroksena otsikon alla */
+    .header-inner-right .calc-info {
+        max-width: 100%;
+        text-align: left;        /* pidetään selitteen teksti luettavana vasemmassa marginaalissa */
+        padding: 0 6px;          /* pienet sisäiset reunukset mobiilissa */
+    }
+
+    /* Varaus: jos halutaan myös pienempi fontti selitteelle */
+    .header-inner-right .calc-info p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
 
     .content-left {
         border-right: none;
@@ -297,9 +400,4 @@ footer {
         width: 100%;
     }
 
-    /* Logot mobiilikoossa allekkain */
-    .logo-container {
-        flex-direction: column;
-        gap: 20px;
-    }
 }

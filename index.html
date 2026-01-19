@@ -9,29 +9,35 @@
 <body>
 
 <header>
-
-    <!-- SIVUN OTSIKKO -->
-    <h1>Freetyön palkkiolaskuri</h1>
-
-    <!-- LASKURIN SELITE -->
-     <div class="calc-info">
-        <h3>Mitä laskuri laskee?</h3>
-        <p>Laskutettava työtuntimäärä/vuosi lasketaan päivittäisestä laskutettavasta työtuntimäärästä seuraavasti:</p>
-        <p>Ensin lasketaan normaalit työpäivät vuodessa = 7,5 tuntia x 5 päivää x 52 viikkoa = 1 950 bruttotyötuntia vuodessa..</p>
-        <p>Tästä vähennetään arkipyhät keskimääräisesti, 8 päivää x 7,5 tuntia = 60 tuntia.</p>
-        <p>Laskurin vuosityöaika on siis 1 890 työtuntia, josta vähennetään lomat ja arvio sairauslomapäivistä.</p>
+    <!--HEADER JAETTU KAHTEEN OSAAN-->
+    <div class="header-inner">
+        <!-- VASEN PUOLI: Otsikko -->
+        <div class="header-inner-left">
+            <!-- SIVUN OTSIKKO -->
+            <h1>Freetyön palkkiolaskuri</h1>
+        </div>
+        <!-- OIKEA PUOLI: Selite -->
+        <div class="header-inner-right">
+            <!-- LASKURIN SELITE -->
+            <div class="calc-info">
+                <h3>Mitä laskuri laskee?</h3>
+                <p>Laskutettava työtuntimäärä/vuosi lasketaan päivittäisestä laskutettavasta työtuntimäärästä seuraavasti:</p>
+                <p>Ensin lasketaan normaalit työpäivät vuodessa = 7,5 tuntia x 5 päivää x 52 viikkoa = 1 950 bruttotyötuntia vuodessa.</p>
+                <p>Tästä vähennetään arkipyhät keskimääräisesti, 8 päivää x 7,5 tuntia = 60 tuntia.</p>
+                <p>Laskurin vuosityöaika on siis 1 890 työtuntia, josta vähennetään lomat ja arvio sairauslomapäivistä.</p>
+            </div>
+        </div>
     </div>
-  
+
 </header>
 
 <!-- PÄÄSISÄLTÖ -->
 <main>
     
-
     <!-- KAKSI SARAKETTA -->
     <div class="container">
 
-        <!-- VASEN PUOLI -->
+        <!-- VASEN PUOLI: Lomake-->
         <div class="content-left">
             <form>
 
@@ -113,7 +119,6 @@
                     <option>29 pv / vuosi</option>
                     <option>30 pv / vuosi</option>
                 </select>
-
 
                 <!-- KULUT / KK -->
                 <h2>Kulut</h2>
@@ -210,7 +215,6 @@
                 <label for="muut-ostopalvelut">Muut ostopalvelut</label>
                 <input type="number" id="muut-ostopalvelut">
 
-
                 <!-- TAVOITELASKUTUS -->
                 <div id="tavoitelaskutus-tulos" class="tulos-box"></div><!-- TULOS NÄKYVIIN TÄHÄN -->
                 
@@ -220,17 +224,15 @@
 
                 <button type="submit" id="laske-tavoitelaskutus">LASKE TAVOITELASKUTUS</button>
                 
-
             </form>
 
             <p>Tavanomaisesta poikkeavat kulut lisätään laskuun palkkion päälle, ja niistä sovitaan etukäteen toimeksiantajan kanssa. 
                 Tällaisia ovat esimerkiksi matka- ja majoituskulut sekä juttua tai kuvausta varten hankitut tarvikkeet.</p>
         </div>
 
-        <!-- OIKEA PUOLI: Selite -->
+        <!-- OIKEA PUOLI: YEL JA LOGOT-->
         <div class="content-right">
            
-
             <div class="yel-info">
                 <h3>Lakisääteinen yrittäjäeläke YEL</h3>
 
@@ -251,7 +253,7 @@
                 </a>
             </div>
 
-            <!-- Logo-alue -->
+            <!-- LOGO ALUE -->
             <div class="logo-container">
                 <div class="logo"><img src="" alt="logo1"></div>
                 <div class="logo"><img src="" alt="logo2"></div>
@@ -266,6 +268,7 @@
     <img src="" alt="Laaja logokokoelma">
 </footer>
 
+<!-- JAVASCRIPT TIEDOSTO-->
 <script src="js/script.js"></script>
 
 </body>
