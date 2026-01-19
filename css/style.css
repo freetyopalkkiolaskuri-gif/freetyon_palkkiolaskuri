@@ -77,7 +77,7 @@ form > label {
     margin: 0;
     font-weight: bold;
     display: inline-block; /* Firefox tarvitsee tämän */
-    align-self: center;     /* Keskittää pystysuunnassa */
+    align-self: center;     /* vertically center label next to inputs */
 }
 
 form > input[type="number"],
@@ -98,14 +98,49 @@ form > select {
 }
 
 /* Elementit jotka haluavat kattaa molemmat sarakkeet */
-form > h2,
-form > h3,
 form > hr,
 form > .tulos-box,
 form > .print-section,
 form > button,
 form > p {
     grid-column: 1 / -1;
+}
+
+/* Otsikkopari (h2 + heti seuraava h3): sijoitetaan vierekkäin
+   h2 vasempaan sarakkeeseen, pieni yksikkö ("/ kk", "/ vuosi") oikeaan */
+form > h2 {
+    grid-column: 1;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #005a9c;
+    font-size: 18px;
+}
+
+form > h2 + h3 {
+    grid-column: 2;
+    justify-self: start;
+    align-self: center;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Jos haluat, voit merkitä tietyn h3:n luokalla 'section-subtitle' jotta se kattaa molemmat sarakkeet */
+form > h3.section-subtitle {
+    grid-column: 1 / -1;
+}
+
+/* Standalone h3 (ei luokkana section-subtitle): sijoita oikeaan sarakkeeseen
+   jotta teksti tulee input-kentän yläpuolelle vaikka edeltävää h2:ta ei ole */
+form > h3:not(.section-subtitle) {
+    grid-column: 2;
+    justify-self: start;
+    align-self: center;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 14px;
 }
 
 /* Otsikot (vastaa alkuperäisen laskurin sinisävyä) */
