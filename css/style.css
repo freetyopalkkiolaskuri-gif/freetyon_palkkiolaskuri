@@ -28,6 +28,7 @@ body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        background-color: rgba(225, 241, 255, 0.5);
 }
 
 /*
@@ -39,10 +40,18 @@ body {
     - Näin voimme pitää headerin taustan koko leveydellä, mutta linjata
         tekstin tarkasti saman leveysalueen kanssa kuin muu sisältö (.container).
 */
+
+
+/* Headerin kuva liitetty suoraan kansiosta */
 header {
     background: #f5f5f5;
     padding: 20px 0;
+    background-image: url(/BannerBackground.jpg);
+    background-size: cover;
+    color: white;
+    height: 370px;
 }
+
 /*
     .header-inner - keskitetty kääre
 
@@ -80,12 +89,36 @@ header {
     max-width: 520px;
     display: block;
     text-align: left; /*Laskee tekstin vasempaan reunaan*/
+    background-color: white;
+    color: black;
+    padding: 50px;
+}
+
+.yel-info {
+    max-width: 520px;
+    display: block;
+    text-align: left; /*Laskee tekstin vasempaan reunaan*/
+    background-color: white;
+    color: black;
+    padding: 50px;
+    margin-top: 60px;
+}
+
+.logo-container {
+    max-width: 520px;
+    display: block;
+    text-align: left; /*Laskee tekstin vasempaan reunaan*/
+    background-color: white;
+    color: black;
+    padding: 50px;
+    margin-top: 60px;
 }
 
 /* Otsikon tyyli */
 .header-inner-left h1 {
     text-align: left;
     margin: 0;
+    font-size: 70px;
 }
 
 /*Logo alue*/
@@ -189,20 +222,21 @@ form > p {
    h2 vasempaan sarakkeeseen, pieni yksikkö ("/ kk", "/ vuosi") oikeaan */
 form > h2 {
     grid-column: 1;
-    margin-top: 25px;
-    margin-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     color: #005a9c;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 form > h2 + h3 {
     grid-column: 2;
     justify-self: start;
     align-self: center;
-    margin-top: 25px;
-    margin-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Jos haluat, voit merkitä tietyn h3:n luokalla 'section-subtitle' jotta se kattaa molemmat sarakkeet */
@@ -216,18 +250,18 @@ form > h3:not(.section-subtitle) {
     grid-column: 2;
     justify-self: start;
     align-self: center;
-    margin-top: 25px;
-    margin-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Otsikot (vastaa alkuperäisen laskurin sinisävyä) */
 form h2 {
-    margin-top: 25px;
-    margin-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     color: #005a9c;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 form h2:first-child {
@@ -258,16 +292,19 @@ select {
 /* Napit */
 button {
     margin-top: 15px;
-    padding: 10px 14px;
+    padding: 20px 10px;
     font-size: 15px;
     border: 1px solid #aaa;
-    background: #eee;
+    background: black;
     cursor: pointer;
     border-radius: 4px;
+    color: white;
+    font-weight: 700;
 }
 
 button:hover {
-    background: #ddd;
+    background: #818181;
+    color: black;
 }
 
 /* Tulostusnappi */
@@ -401,3 +438,18 @@ footer {
     }
 
 }
+
+
+/* Väliä banerin ja ensimmäisen h2:n väliin*/
+span {
+    padding: 20px;
+}
+
+/*loppu logolaatikon tyylit*/
+.loppu-logo-container {
+    background-color: #121B1F;
+    padding: 20px;
+
+}
+
+
