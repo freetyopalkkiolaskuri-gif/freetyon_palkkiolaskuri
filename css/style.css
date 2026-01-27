@@ -49,7 +49,7 @@ header {
     background-image: url('../img/header-background.jpg');
     background-size: cover;
     color: white;
-    height: 370px;
+    height: 420px;
 }
 
 /*
@@ -87,21 +87,23 @@ header {
 
 .header-inner-right .calc-info {
     max-width: 520px;
+    font-size: 20px;
     display: block;
     text-align: left; /*Laskee tekstin vasempaan reunaan*/
     background-color: white;
     color: black;
-    padding: 50px;
+    padding: 60px;
 }
 
 .yel-info {
     max-width: 520px;
+    font-size: 18px;
     display: block;
     text-align: left; /*Laskee tekstin vasempaan reunaan*/
     background-color: white;
     color: black;
     padding: 50px;
-    margin-top: 60px;
+    margin-top: 90px;
 }
 
 .logo-container {
