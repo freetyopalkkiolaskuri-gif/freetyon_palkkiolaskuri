@@ -335,11 +335,11 @@ button:hover {
     margin-top: 20px;
     padding: 15px;
     background: #f0f8ff;           
-    border: 2px solid #0077cc;     
+    
     border-radius: 8px;           
     font-size: 1.2rem;
     font-weight: 600;
-    color: #003f66;                
+    color: black;                
     display: none;                 
 }
 
