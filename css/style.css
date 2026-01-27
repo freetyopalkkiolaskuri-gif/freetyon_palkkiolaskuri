@@ -46,7 +46,7 @@ body {
 header {
     background: #f5f5f5;
     padding: 20px 0;
-    background-image: url(/BannerBackground.jpg);
+    background-image: url('../img/header-background.jpg');
     background-size: cover;
     color: white;
     height: 370px;
