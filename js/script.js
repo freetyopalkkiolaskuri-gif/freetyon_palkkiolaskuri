@@ -44,9 +44,7 @@ function calculateBilling(event) {
         // Kuukausittaiset kulut 
         const monthlyExpenses = 
             (parseFloat(document.getElementById('tyotila-vuokra').value) || 0) +
-            (parseFloat(document.getElementById('tyotila-muut').value) || 0) +
             (parseFloat(document.getElementById('puhelin').value) || 0) +
-            (parseFloat(document.getElementById('netti').value) || 0) +
             (parseFloat(document.getElementById('muut-netit').value) || 0) +
             (parseFloat(document.getElementById('toimisto').value) || 0) +
             (parseFloat(document.getElementById('materiaalit').value) || 0) +
@@ -62,17 +60,13 @@ function calculateBilling(event) {
         const annualExpenses = 
             (parseFloat(document.getElementById('kalusto').value) || 0) +
             (parseFloat(document.getElementById('tietokoneet').value) || 0) +
-            (parseFloat(document.getElementById('kamera').value) || 0) +
-            (parseFloat(document.getElementById('valaisin').value) || 0) +
             (parseFloat(document.getElementById('ohjelmistot').value) || 0) +
-            (parseFloat(document.getElementById('vakuutukset-laitteet').value) || 0) +
-            (parseFloat(document.getElementById('muut-vakuutukset').value) || 0) +
+            (parseFloat(document.getElementById('vakuutukset').value) || 0) +
             (parseFloat(document.getElementById('yel').value) || 0) +
             (parseFloat(document.getElementById('kirjanpito').value) || 0) +
             (parseFloat(document.getElementById('tyoterveys').value) || 0) +
             (parseFloat(document.getElementById('koulutus').value) || 0) +
             (parseFloat(document.getElementById('markkinointi').value) || 0) +
-            (parseFloat(document.getElementById('kotisivut').value) || 0) +
             (parseFloat(document.getElementById('muut-ostopalvelut').value) || 0);
         
         // Työmäärä 
