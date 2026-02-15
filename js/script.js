@@ -4,7 +4,7 @@ const CONFIG = {
     WORK_DAYS_PER_WEEK: 5,
     WEEKS_PER_YEAR: 52,
     PUBLIC_HOLIDAYS_HOURS: 60,
-    ALV: 0.255,
+    //ALV: 0.255,
 };
 
 const ANNUAL_WORK_HOURS = (CONFIG.STANDARD_DAILY_HOURS * CONFIG.WORK_DAYS_PER_WEEK * CONFIG.WEEKS_PER_YEAR) - CONFIG.PUBLIC_HOLIDAYS_HOURS;
@@ -40,6 +40,8 @@ function calculateBilling(event) {
     try {
         // Hae syötteet lomakkeelta
         const targetMonthlyIncome = parseFloat(document.getElementById('verotettava-ansio').value) || 0;
+        const ALV = parseFloat(document.getElementById('alv').value) || 0; //hakee alv:n input kentästä ja muuttaa sen numeroksi, jos ei onnistu, asettaa 0
+        alvValue = ALV / 100; // Muuta prosentti desimaaliksi
         
         // Kuukausittaiset kulut 
         const monthlyExpenses = 
@@ -86,7 +88,7 @@ function calculateBilling(event) {
         
         // Tavoiteansiot tunnilta, päivältä, viikolta, kuukaudelta ja vuodelta 
         const hourlyRate = requiredNetRevenue / billableAnnualHours;
-        const hourlyRateWithVat = hourlyRate * (1 + CONFIG.ALV);
+        const hourlyRateWithVat = hourlyRate * (1 + alvValue);
         
         const dailyRate = hourlyRate * CONFIG.STANDARD_DAILY_HOURS;
         const dailyRateWithVat = hourlyRateWithVat * CONFIG.STANDARD_DAILY_HOURS;
@@ -95,10 +97,10 @@ function calculateBilling(event) {
         const weeklyRateWithVat = dailyRateWithVat * CONFIG.WORK_DAYS_PER_WEEK;
         
         const monthlyRate = hourlyRate * (billableAnnualHours / 12);
-        const monthlyRateWithVat = monthlyRate * (1 + CONFIG.ALV);
+        const monthlyRateWithVat = monthlyRate * (1 + alvValue);
         
         const annualRate = requiredNetRevenue;
-        const annualRateWithVat = requiredNetRevenue * (1 + CONFIG.ALV);
+        const annualRateWithVat = requiredNetRevenue * (1 + alvValue);
         
         // Näytä tulokset 
         displayResults({
@@ -145,7 +147,7 @@ function displayResults(data) {
         printSection.style.display = 'block';
     }
     
-    const alvPercent = (CONFIG.ALV * 100).toFixed(1);
+    const alvPercent = (alvValue * 100).toFixed(1);
     
     // Taulukko summaarisen tiedon osioille
     const summaryItems = [
