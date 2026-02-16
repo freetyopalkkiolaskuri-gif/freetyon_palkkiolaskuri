@@ -52,13 +52,13 @@
                 <h2>Kuukausiansio</h2>
 
                 <label for="verotettava-ansio">Toivottu verotettava kuukausiansio (€)</label>
-                <input type="number" id="verotettava-ansio">
+                <input type="number" id="verotettava-ansio" min="0">
 
                 <!-- ALV -->
                 <h2>Arvonlisävero</h2>
                 <label for="alv">Syötä ALV% tai jätä tyhjäksi</label>
                 <!-- step="0.1" sallii desimaalit, esim. 25.5 -->
-                <input type="number" id="alv" step="0.1">
+                <input type="number" id="alv" step="0.1" min="0">
 
                  <!-- TYÖMÄÄRÄ -->
                 <h2>Työmäärä</h2>
@@ -138,77 +138,77 @@
                 <h3>/ kk</h3>
 
                 <label for="tyotila-vuokra">Työtilavuokrat ja kulut</label>
-                <input type="number" id="tyotila-vuokra">
+                <input type="number" id="tyotila-vuokra" min="0">
 
                 <label for="puhelin">Puhelinkulut ja verkkoyhteys</label>
-                <input type="number" id="puhelin">
+                <input type="number" id="puhelin" min="0">
 
                 <label for="muut-netit">Muut tietoliikennekulut (Domain, hosting ym.)</label>
-                <input type="number" id="muut-netit">
+                <input type="number" id="muut-netit" min="0">
 
                 <label for="toimisto">Toimistotarvikkeet</label>
-                <input type="number" id="toimisto">
+                <input type="number" id="toimisto" min="0">
 
                 <label for="materiaalit">Tarvike- ja materiaalikulut</label>
-                <input type="number" id="materiaalit">
+                <input type="number" id="materiaalit" min="0">
 
                 <label for="auto">Auto (huolto, vakuutus, vero, polttoaine ym.)</label>
-                <input type="number" id="auto">
+                <input type="number" id="auto" min="0">
 
                 <label for="ammattimaksut">Ammattiliiton, -järjestön tai -kassan jäsenmaksu</label>
-                <input type="number" id="ammattimaksut">
+                <input type="number" id="ammattimaksut" min="0">
 
                 <label for="lehdet">Ammattikirjallisuus ja mediat</label>
-                <input type="number" id="lehdet">
+                <input type="number" id="lehdet" min="0">
 
                 <label for="tyomatka">Matkat työpaikan ja asunnon välillä</label>
-                <input type="number" id="tyomatka">
+                <input type="number" id="tyomatka" min="0">
 
                 <label for="varsinaiset-matkat">Varsinaiset työmatkat</label>
-                <input type="number" id="varsinaiset-matkat">
+                <input type="number" id="varsinaiset-matkat" min="0">
 
                 <label for="rahoitus">Pankki-, rahoitus- ja lainakulut</label>
-                <input type="number" id="rahoitus">
+                <input type="number" id="rahoitus" min="0">
 
                 <label for="muut-kulut">Muut juoksevat kulut</label>
-                <input type="number" id="muut-kulut">
+                <input type="number" id="muut-kulut" min="0">
 
                 <!-- KULUT / VUOSI -->
                 <h3>/ vuosi</h3>
 
                 <label for="kalusto">Kalusto ja työvälineet</label>
-                <input type="number" id="kalusto">
+                <input type="number" id="kalusto" min="0">
 
                 <label for="tietokoneet">Tietokoneet, tulostimet yms.</label>
-                <input type="number" id="tietokoneet">
+                <input type="number" id="tietokoneet" min="0">
 
                 <label for="ohjelmistot">Ohjelmistot ja lisenssit</label>
-                <input type="number" id="ohjelmistot">
+                <input type="number" id="ohjelmistot" min="0">
 
                 <label for="vakuutukset">Vakuutukset (laitteet, toiminta, tapaturma)</label>
-                <input type="number" id="vakuutukset">
+                <input type="number" id="vakuutukset" min="0">
 
                 <label for="yel">YEL</label>
-                <input type="number" id="yel">
+                <input type="number" id="yel" min="0">
 
                 <!-- OSTOPALVELUT / VUOSI -->
                 <h2>Ostopalvelut</h2>
                 <h3>/ vuosi</h3>
 
                 <label for="kirjanpito">Kirjanpito</label>
-                <input type="number" id="kirjanpito">
+                <input type="number" id="kirjanpito" min="0">
 
                 <label for="tyoterveys">Työterveyshuolto</label>
-                <input type="number" id="tyoterveys">
+                <input type="number" id="tyoterveys" min="0">
 
                 <label for="koulutus">Ammatillinen kouluttautuminen</label>
-                <input type="number" id="koulutus">
+                <input type="number" id="koulutus" min="0">
 
                 <label for="markkinointi">Markkinointi (some, web, mainokset)</label>
-                <input type="number" id="markkinointi">
+                <input type="number" id="markkinointi" min="0">
 
                 <label for="muut-ostopalvelut">Muut ostopalvelut</label>
-                <input type="number" id="muut-ostopalvelut">
+                <input type="number" id="muut-ostopalvelut" min="0">
 
                 <!-- TAVOITELASKUTUS -->
                 <div id="tavoitelaskutus-tulos" class="tulos-box"></div><!-- TULOS NÄKYVIIN TÄHÄN -->
