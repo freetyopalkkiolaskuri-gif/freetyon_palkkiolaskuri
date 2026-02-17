@@ -41,7 +41,6 @@ body {
         tekstin tarkasti saman leveysalueen kanssa kuin muu sisältö (.container).
 */
 
-
 /* Headerin kuva liitetty suoraan kansiosta */
 header {
     background: #f5f5f5;
@@ -121,6 +120,11 @@ header {
     text-align: left;
     margin: 0;
     font-size: 60px;
+}
+
+/* Väliä bannerin ja ensimmäisen h2:n väliin*/
+span {
+    padding: 20px;
 }
 
 /*Logo alue*/
@@ -367,92 +371,161 @@ footer {
     height: 40px;
 }
 
-/* Responsiivisuus */
-@media screen and (max-width: 800px) {
-
-    .container {
-        flex-direction: column;
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    /* Mobiiliasetukset headerille */
-    .header-inner {
-        flex-direction: column;    /* pinottaa otsikon ja selitteen päällekkäin */
-        gap: 8px;
-        padding: 8px 10px;        /* pienempi padding mobiilissa */
-        align-items: stretch;     /* täytä leveys, niin linjautuu containerin kanssa */
-    }
-
-    .header-inner-left,
-    .header-inner-right {
-        flex: none;               /* ei venytä sivuttaissuunnassa */
-        width: 100%;
-        padding: 0;               /* poista desktop-paddingit */
-    }
-
-    /* Keskitetään otsikko mobiilissa */
-    .header-inner-left h1 {
-        text-align: center;
-        font-size: 1.4rem;
-        margin: 0.2rem 0;
-    }
-
-    /* Selite (calc-info) kerroksena otsikon alla */
-    .header-inner-right .calc-info {
-        max-width: 100%;
-        text-align: left;        /* pidetään selitteen teksti luettavana vasemmassa marginaalissa */
-        padding: 0 6px;          /* pienet sisäiset reunukset mobiilissa */
-    }
-
-    /* Varaus: jos halutaan myös pienempi fontti selitteelle */
-    .header-inner-right .calc-info p {
-        font-size: 0.95rem;
-        line-height: 1.4;
-    }
-
-
-    .content-left {
-        border-right: none;
-        padding-right: 0;
-    }
-
-    .content-right {
-        padding-left: 0;
-    }
-
-    /* Lomake: single-column grid (label above input) */
-    form {
-        grid-template-columns: 1fr;
-        align-items: start;
-    }
-
-    form > label {
-        grid-column: 1;
-        display: block;
-        margin-bottom: 6px;
-    }
-
-    form > input[type="number"],
-    form > input[type="text"],
-    form > select {
-        grid-column: 1;
-        width: 100%;
-    }
-
-}
-
-
-/* Väliä banerin ja ensimmäisen h2:n väliin*/
-span {
-    padding: 20px;
-}
-
 /*loppu logolaatikon tyylit*/
 .loppu-logo-container {
     background-color: #121B1F;
     padding: 20px;
 
 }
+
+/* Responsiivisuus */
+@media screen and (max-width: 1024px) {
+
+    /* Yksi sarake koko sivulle */
+    .container {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 20px;
+    }
+
+    .content-left,
+    .content-right {
+        padding: 0;
+        width: 100%;
+    }
+
+    /* HEADER */
+    header {
+        height: auto;
+        min-height: 400px;
+        padding: 20px 15px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .header-inner-left,
+    .header-inner-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .header-inner-left h1 {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .header-inner-left h3 {
+        text-align: center;
+    }
+
+    .header-inner-right {
+        justify-content: center;
+    }
+
+    /* AINOA MUUTOS ON TÄSSÄ */
+    .header-inner-right .calc-info {
+        max-width: 700px;
+        width: 90%;
+        padding: 20px;
+        text-align: left;
+        margin: 40px auto -60px auto;
+    }
+
+    /* Oikean puolen laatikot keskelle */
+    .yel-info,
+    .logo-container {
+        width: 90%;
+        max-width: 700px;
+        margin: 20px auto 0 auto;
+        padding: 20px;
+    }
+
+    /* LOMAKE: yksipalstainen ja keskitetty */
+    form {
+        display: block;
+        width: 90%;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    form label {
+        display: block;
+        width: 100%;
+        margin: 15px auto 5px auto;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    form input,
+    form select {
+        display: block;
+        width: 100%;
+        margin: 0 auto 12px auto;
+    }
+
+    form > input[type="number"],
+    form > input[type="text"],
+    form > select {
+        max-width: none;
+        justify-self: center;
+    }
+
+    form h2 {
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    form > h3,
+    form > h3:not(.section-subtitle) {
+        width: 100%;
+        margin: 20px auto 10px auto;
+        text-align: left;
+        grid-column: auto;
+    }
+
+    button {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto 0 auto;
+        display: block;
+    }
+
+    .logo-container {
+        gap: 20px;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 200px;
+        height: 55px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .loppu-logo-container img {
+        width: auto;
+        max-width: 90%;
+        height: auto;
+        max-height: 60px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .content-left > p {
+        width: 90%;
+        max-width: 700px;
+        margin: 20px auto;
+        text-align: left;
+    }
+}
+
 
 
