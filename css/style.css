@@ -378,7 +378,21 @@ footer {
 
 }
 
-/* Responsiivisuus */
+/* Responsiivisuus
+     @media screen and (max-width: 1024px)
+
+     Tämä media-query kohdistuu kapeampiin näyttöihin (esim. tabletit ja pienemmät näytöt).
+     Se muuttaa sivun asettelun yksipalstaiseksi ja parantaa luettavuutta kosketusnäytöillä
+     tekemällä seuraavia muutoksia:
+     - muuttaa kaksisarakkeisen `.container`-asettelun pystysuuntaiseksi (yksi sarake)
+     - pinottaa headerin sisällön pystysuoraan ja keskittää otsikot
+     - kaventaa ja keskittää oikean puolen laatikot (`.yel-info`, `.logo-container`)
+     - muuttaa lomakkeen yksipalstaiseksi, kasvattaa kenttien leveyttä ja säätää labelien
+         asemaa mobiilikäyttöön sopivaksi
+     - säätää nappien ja logokuvien leveyksiä kosketusystävällisemmiksi
+
+     Breakpoint: 1024px (sopiva rajapiste tableteille ja pienemmille näytöille).
+*/
 @media screen and (max-width: 1024px) {
 
     /* Yksi sarake koko sivulle */
@@ -387,20 +401,21 @@ footer {
         padding: 0 15px;
         gap: 20px;
     }
-
+    /* Sisältöalueet pinottuna, täyttävät koko leveyden */
     .content-left,
     .content-right {
         padding: 0;
         width: 100%;
     }
 
-    /* HEADER */
+    /* Header: sisältö pinottuna, keskitettynä, ja otsikot keskitettynä */
     header {
         height: auto;
         min-height: 400px;
         padding: 20px 15px;
     }
 
+    /* Headerin sisäiset elementit pinottuna ja keskitettynä */
     .header-inner {
         flex-direction: column;
         gap: 15px;
@@ -408,6 +423,7 @@ footer {
         align-items: center;
     }
 
+    /* Headerin vasen ja oikea lohko täyttävät koko leveyden, otsikot keskitettynä */
     .header-inner-left,
     .header-inner-right {
         width: 100%;
@@ -427,7 +443,7 @@ footer {
         justify-content: center;
     }
 
-    /* AINOA MUUTOS ON TÄSSÄ */
+    /* Laskurin selite ja oikean puolen laatikot kavennetaan ja keskitetään, jotta ne eivät veny liian leveiksi mobiilissa */
     .header-inner-right .calc-info {
         max-width: 700px;
         width: 90%;
@@ -454,6 +470,7 @@ footer {
         text-align: center;
     }
 
+    /* Labelit ja inputit täyttämään koko leveyden, mutta rajoitetaan maksimileveyttä jotta ne eivät veny liian leveiksi mobiilissa */
     form label {
         display: block;
         width: 100%;
@@ -476,11 +493,13 @@ footer {
         justify-self: center;
     }
 
+    /* Otsikot keskitetään, mutta h2 ja h3 pidetään erillään jotta ne eivät mene päällekkäin */
     form h2 {
         text-align: left;
         margin-top: 25px;
     }
 
+    /*H3:set jotka eivät ole section-subtitle, sijoitetaan keskelle input-kenttien yläpuolelle*/
     form > h3,
     form > h3:not(.section-subtitle) {
         width: 100%;
@@ -489,6 +508,7 @@ footer {
         grid-column: auto;
     }
 
+    /* Napit täyttämään koko leveyden, mutta rajoitetaan maksimileveyttä jotta ne eivät veny liian leveiksi mobiilissa */
     button {
         width: 100%;
         max-width: 500px;
@@ -496,6 +516,7 @@ footer {
         display: block;
     }
 
+    /* Logot keskitettynä ja kavennettuina, jotta ne eivät veny liian leveiksi mobiilissa */
     .logo-container {
         gap: 20px;
         align-items: center;
@@ -510,6 +531,7 @@ footer {
         margin: 0 auto;
     }
 
+    /* Loppu logolaatikon logot keskitettynä ja kavennettuina, jotta ne eivät veny liian leveiksi mobiilissa */
     .loppu-logo-container img {
         width: auto;
         max-width: 90%;
@@ -519,6 +541,7 @@ footer {
         margin: 0 auto;
     }
 
+    /* Sisältöalueiden tekstit keskitettynä ja kavennettuina, jotta ne eivät veny liian leveiksi mobiilissa */
     .content-left > p {
         width: 90%;
         max-width: 700px;
