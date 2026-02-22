@@ -137,7 +137,7 @@ span {
 }
 
 .logo img {
-    max-height: 120px;          /* logo kuvan koko */
+    max-height: 70px;          /* logo kuvan koko */
     width: auto;
     display: block;
 }
@@ -374,8 +374,13 @@ footer {
 /*loppu logolaatikon tyylit*/
 .loppu-logo-container {
     background-color: #121B1F;
-    padding: 20px;
+    padding: 40px;
 
+}
+
+/*Footerin logojen koko*/
+.loppu-logot {
+    max-height: 120px;
 }
 
 /* Responsiivisuus
