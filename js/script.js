@@ -40,7 +40,9 @@ function calculateBilling(event) {
     try {
         // Hae syötteet lomakkeelta
         const targetMonthlyIncome = parseFloat(document.getElementById('verotettava-ansio').value) || 0;
-        const ALV = parseFloat(document.getElementById('alv').value) || 0; //hakee alv:n input kentästä ja muuttaa sen numeroksi, jos ei onnistu, asettaa 0
+        const alvInputValue = document.getElementById('alv').value.trim();
+        const showVAT = alvInputValue !== '';
+        const ALV = parseFloat(alvInputValue) || 0; //hakee alv:n input kentästä ja muuttaa sen numeroksi, jos ei onnistu, asettaa 0
         alvValue = ALV / 100; // Muuta prosentti desimaaliksi
         
         // Kuukausittaiset kulut 
@@ -119,7 +121,8 @@ function calculateBilling(event) {
             monthlyRate,
             monthlyRateWithVat,
             annualRate,
-            annualRateWithVat
+            annualRateWithVat,
+            showVAT
         });
         
         // Tallenna lomakkeen tiedot 
@@ -236,11 +239,16 @@ function displayResults(data) {
     
     // Tavoite laskutushinnat
     html += billingRates.map(rate => {
-        return '<div class="result-section highlight">' +
+        let rateHtml = '<div class="result-section highlight">' +
                 '<h4>' + rate.title + '</h4>' +
-                '<p>Ilman ALV: <strong>' + formatCurrency(rate.noVat) + ' ' + rate.unit + '</strong></p>' +
-                '<p>ALV ' + alvPercent + '% sisällyttäen: <strong>' + formatCurrency(rate.withVat) + ' ' + rate.unit + '</strong></p>' +
-                '</div>';
+                '<p>Ilman ALV: <strong>' + formatCurrency(rate.noVat) + ' ' + rate.unit + '</strong></p>';
+        
+        if (data.showVAT) {
+            rateHtml += '<p>ALV ' + alvPercent + '% sisällyttäen: <strong>' + formatCurrency(rate.withVat) + ' ' + rate.unit + '</strong></p>';
+        }
+        
+        rateHtml += '</div>';
+        return rateHtml;
     }).join('');
     
     html += '</div>';
